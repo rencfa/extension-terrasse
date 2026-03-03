@@ -11,9 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- RESET & VARIABLES (Minéral & Brut) --- */
+        /* --- RESET TOTAL POUR MOBILE --- */
+        html {
+            box-sizing: border-box;
+            overflow-x: hidden; /* Empêche le débordement horizontal à la racine */
+        }
         *, *::before, *::after {
-            box-sizing: border-box; /* Crucial pour éviter les débordements sur mobile */
+            box-sizing: inherit;
         }
 
         :root {
@@ -33,7 +37,8 @@
             padding: 0;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; /* Empêche le scroll horizontal accidentel */
+            overflow-x: hidden;
+            width: 100%;
         }
 
         h1, h2, h3 {
@@ -41,6 +46,8 @@
             color: var(--charbon);
             margin-top: 0;
             text-transform: uppercase;
+            overflow-wrap: break-word; /* Force les mots longs à passer à la ligne */
+            word-wrap: break-word;
         }
 
         img {
@@ -49,27 +56,28 @@
             display: block;
         }
 
+        /* Gestion centralisée et sécurisée des conteneurs */
+        section {
+            padding: 80px 0;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
-            margin: auto;
-            padding: 80px 0;
+            margin: 0 auto;
         }
 
         /* --- HEADER & HERO --- */
         header {
             background-color: var(--pierre);
             color: var(--charbon);
-            padding: 120px 20px 80px;
+            padding: 100px 0 80px;
             border-bottom: 1px solid var(--bordure);
             text-align: left;
-            max-width: 1200px;
-            margin: auto;
-            width: 100%;
         }
 
         header h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-size: clamp(2rem, 6vw, 4.5rem);
             line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -1px;
@@ -99,10 +107,6 @@
         }
 
         /* --- SECTIONS GÉNÉRALES --- */
-        section {
-            padding: 20px 20px;
-        }
-
         .bg-blanc {
             background-color: var(--blanc);
             border-top: 1px solid var(--bordure);
@@ -147,7 +151,7 @@
             padding-left: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
@@ -169,7 +173,7 @@
         /* --- GRILLE ARGUMENTS --- */
         .grid-arguments {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
 
@@ -200,7 +204,6 @@
         .card-argument h3 {
             font-size: 1.2rem;
             margin-bottom: 10px;
-            letter-spacing: 0;
         }
 
         .card-argument p {
@@ -224,7 +227,7 @@
         /* --- GALERIE RÉALISATIONS --- */
         .galerie-photos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
 
@@ -241,7 +244,7 @@
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            gap: 60px;
         }
 
         .form-group {
@@ -266,8 +269,8 @@
             background-color: transparent;
             font-family: 'DM Sans', sans-serif;
             font-size: 1rem;
+            border-radius: 0; 
             transition: border-color 0.3s ease;
-            border-radius: 0; /* Empêche les arrondis par défaut sur iOS */
         }
 
         input:focus, textarea:focus {
@@ -312,7 +315,7 @@
             border-bottom: 1px solid var(--brique);
             padding-bottom: 2px;
             transition: color 0.3s ease;
-            word-break: break-all; /* Évite que l'adresse mail déborde sur mobile */
+            word-break: break-all; 
         }
 
         .contact-info a:hover {
@@ -341,13 +344,16 @@
            RÈGLES SPÉCIFIQUES POUR MOBILE & TABLETTE 
            ========================================= */
         @media (max-width: 768px) {
+            section {
+                padding: 50px 0;
+            }
+
             .container {
-                width: 100%;
-                padding: 40px 0;
+                width: 92%;
             }
 
             header {
-                padding: 60px 20px 40px;
+                padding: 80px 0 50px;
             }
 
             header h1 {
@@ -359,28 +365,19 @@
                 margin-bottom: 25px;
             }
 
-            /* Réduction des marges intérieures des blocs */
             .conformite-box {
-                padding: 25px 20px;
+                padding: 25px;
             }
 
-            /* La liste passe sur 1 seule colonne */
             .conformite-box ul {
                 grid-template-columns: 1fr;
             }
 
-            /* Les arguments s'empilent */
-            .grid-arguments {
-                grid-template-columns: 1fr;
-            }
-
-            /* La galerie s'affiche en grille de 2 colonnes style Instagram */
             .galerie-photos {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
 
-            /* Le formulaire et le texte s'empilent */
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 50px;
@@ -396,7 +393,7 @@
 <body>
 
     <header>
-        <div class="container" style="padding: 0;">
+        <div class="container">
             <span class="badge-paris">Intervention exclusivement à Paris</span>
             <h1>Artisan Concepteur de Terrasses Estivales</h1>
             <p class="subtitle">Savoir-faire, bois français et conformité Mairie garantie pour bars et restaurants.</p>
@@ -404,11 +401,13 @@
     </header>
 
     <main>
-        <section class="container">
-            <h2>Saison 2026 : Préparez votre terrasse</h2>
-            <p>À Paris, les terrasses de bars et restaurants peuvent être réinstallées à partir du <strong>01/04/2026 et jusqu’à la fin du mois d’octobre</strong> : une excellente nouvelle pour l'activité de votre établissement.</p>
-            <p>Cependant, ces installations se font selon un règlement renforcé, et supposent une autorisation préalable de la mairie d’arrondissement. Le non-respect du règlement peut être sanctionné par de lourdes peines d’amendes et le retrait pur et simple de vos autorisations.</p>
-            <p><em>Depuis 2020, nous installons des terrasses esthétiques, durables, sur-mesure et en totale conformité avec la réglementation de la Mairie de Paris.</em></p>
+        <section>
+            <div class="container">
+                <h2>Saison 2026 : Préparez votre terrasse</h2>
+                <p>À Paris, les terrasses de bars et restaurants peuvent être réinstallées à partir du <strong>01/04/2026 et jusqu’à la fin du mois d’octobre</strong> : une excellente nouvelle pour l'activité de votre établissement.</p>
+                <p>Cependant, ces installations se font selon un règlement renforcé, et supposent une autorisation préalable de la mairie d’arrondissement. Le non-respect du règlement peut être sanctionné par de lourdes peines d’amendes et le retrait pur et simple de vos autorisations.</p>
+                <p><em>Depuis 2020, nous installons des terrasses esthétiques, durables, sur-mesure et en totale conformité avec la réglementation de la Mairie de Paris.</em></p>
+            </div>
         </section>
 
         <section class="bg-blanc">
@@ -427,32 +426,34 @@
             </div>
         </section>
 
-        <section class="container">
-            <h2>Pourquoi choisir notre savoir-faire ?</h2>
-            <div class="grid-arguments">
-                <article class="card-argument">
-                    <img src="arg1.jpg" alt="Terrasse estivale montée en une demi-journée à Paris">
-                    <h3>Pose en une demi-journée</h3>
-                    <p>Ne perdez pas un seul service. Notre équipe intervient rapidement et proprement pour un montage express sans perturber votre activité.</p>
-                </article>
-                
-                <article class="card-argument">
-                    <img src="arg2.jpg" alt="Lames de terrasse en pin traité autoclave français">
-                    <h3>Pin traité autoclave</h3>
-                    <p>Lambourdes et lames de terrasse sélectionnées pour une longévité maximale face aux intempéries et au passage intensif.</p>
-                </article>
+        <section>
+            <div class="container">
+                <h2>Pourquoi choisir notre savoir-faire ?</h2>
+                <div class="grid-arguments">
+                    <article class="card-argument">
+                        <img src="arg1.jpg" alt="Terrasse estivale montée en une demi-journée à Paris">
+                        <h3>Pose en une demi-journée</h3>
+                        <p>Ne perdez pas un seul service. Notre équipe intervient rapidement et proprement pour un montage express sans perturber votre activité.</p>
+                    </article>
+                    
+                    <article class="card-argument">
+                        <img src="arg2.jpg" alt="Lames de terrasse en pin traité autoclave français">
+                        <h3>Pin traité autoclave</h3>
+                        <p>Lambourdes et lames de terrasse sélectionnées pour une longévité maximale face aux intempéries et au passage intensif.</p>
+                    </article>
 
-                <article class="card-argument">
-                    <img src="arg3.jpg" alt="Mise à niveau de la terrasse alignée au trottoir">
-                    <h3>Mise à niveau parfaite</h3>
-                    <p>Une terrasse à hauteur du trottoir, parfaitement plane, assurant la sécurité de votre clientèle et de votre personnel (service en salle).</p>
-                </article>
+                    <article class="card-argument">
+                        <img src="arg3.jpg" alt="Mise à niveau de la terrasse alignée au trottoir">
+                        <h3>Mise à niveau parfaite</h3>
+                        <p>Une terrasse à hauteur du trottoir, parfaitement plane, assurant la sécurité de votre clientèle et de votre personnel (service en salle).</p>
+                    </article>
 
-                <article class="card-argument">
-                    <img src="arg4.jpg" alt="Mobilier sur-mesure en bois pour terrasse de restaurant">
-                    <h3>Mobilier sur-mesure</h3>
-                    <p>Bacs pour plantes, bancs intégrés, garde-corps... Nous personnalisons votre espace pour le rendre unique et accueillant.</p>
-                </article>
+                    <article class="card-argument">
+                        <img src="arg4.jpg" alt="Mobilier sur-mesure en bois pour terrasse de restaurant">
+                        <h3>Mobilier sur-mesure</h3>
+                        <p>Bacs pour plantes, bancs intégrés, garde-corps... Nous personnalisons votre espace pour le rendre unique et accueillant.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -473,18 +474,20 @@
             </div>
         </section>
 
-        <section class="container">
-            <h2>Nos Dernières Réalisations à Paris</h2>
-            <p style="margin-bottom: 40px; color: #57534E;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
-            <div class="galerie-photos">
-                 <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-photo">
-                <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-photo">
-                <img src="realisation3.jpg" alt="Aménagement estival Paris" class="card-photo">
-                <img src="realisation4.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
-                <img src="realisation5.jpg" alt="Terrasse de bar à Paris" class="card-photo">
-                <img src="realisation6.jpg" alt="Terrasse de restaurant bois" class="card-photo">
-                <img src="realisation7.jpg" alt="Aménagement estival Paris" class="card-photo">
-                <img src="realisation8.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
+        <section>
+            <div class="container">
+                <h2>Nos Dernières Réalisations à Paris</h2>
+                <p style="margin-bottom: 40px; color: #57534E;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
+                <div class="galerie-photos">
+                     <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-photo">
+                    <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-photo">
+                    <img src="realisation3.jpg" alt="Aménagement estival Paris" class="card-photo">
+                    <img src="realisation4.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
+                    <img src="realisation5.jpg" alt="Terrasse de bar à Paris" class="card-photo">
+                    <img src="realisation6.jpg" alt="Terrasse de restaurant bois" class="card-photo">
+                    <img src="realisation7.jpg" alt="Aménagement estival Paris" class="card-photo">
+                    <img src="realisation8.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
+                </div>
             </div>
         </section>
 
