@@ -6,24 +6,25 @@
     <meta name="description" content="Artisan spécialisé dans la pose de terrasses estivales en bois pour bars et restaurants à Paris. Conformité totale avec la Mairie de Paris. Installation rapide.">
     <title>Pose de Terrasses Estivales à Paris | Artisan Menuisier & Conformité Garantie</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIABLES DE COULEURS (Nouveau look Néo-Bistrot) --- */
+        /* --- VARIABLES DE COULEURS (Minéral & Brut) --- */
         :root {
-            --bleu-nuit: #0F172A; /* Bleu très sombre, chic parisien */
-            --terracotta: #D95D39; /* Accent dynamique, rappel chaud du bois */
-            --sable: #F3EFEA; /* Beige très clair et chaud */
-            --texte: #334155; /* Gris ardoise pour une lecture douce */
-            --fond: #FAFAFA; /* Blanc très légèrement cassé */
+            --charbon: #1C1917; /* Presque noir, très élégant */
+            --pierre: #F5F4F0; /* Beige gris très clair, aspect matière */
+            --brique: #C04A33; /* Terracotta sourd, rappel du bois et de la brique */
+            --bordure: #E7E5E4;
             --blanc: #FFFFFF;
         }
 
         /* --- STYLES DE BASE --- */
         body {
-            font-family: 'Outfit', sans-serif;
-            color: var(--texte);
-            background-color: var(--fond);
+            font-family: 'DM Sans', sans-serif;
+            color: var(--charbon);
+            background-color: var(--pierre);
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -31,210 +32,214 @@
         }
 
         h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--bleu-nuit);
+            font-family: 'Syne', sans-serif;
+            color: var(--charbon);
             margin-top: 0;
+            text-transform: uppercase;
         }
 
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
+            display: block;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         /* --- HEADER & HERO --- */
         header {
-            background-color: var(--bleu-nuit);
-            color: var(--fond);
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--terracotta);
+            background-color: var(--pierre);
+            color: var(--charbon);
+            padding: 120px 20px 80px;
+            border-bottom: 1px solid var(--bordure);
+            text-align: left; /* Alignement à gauche pour un côté plus "magazine" */
+            max-width: 1200px;
+            margin: auto;
+            width: 90%;
         }
 
         header h1 {
-            color: var(--blanc);
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            font-weight: 800;
         }
 
         header p.subtitle {
             font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 30px;
-            color: #CBD5E1;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 700px;
+            color: #57534E;
         }
 
         .badge-paris {
             display: inline-block;
-            background-color: var(--terracotta);
-            color: var(--blanc);
-            padding: 8px 20px;
+            background-color: transparent;
+            color: var(--brique);
+            border: 1px solid var(--brique);
+            padding: 6px 16px;
             font-weight: 600;
-            border-radius: 30px;
+            border-radius: 4px; /* Finitions droites d'artisan */
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         /* --- SECTIONS GÉNÉRALES --- */
         section {
-            padding: 40px 20px;
+            padding: 20px 20px;
         }
 
         .bg-blanc {
             background-color: var(--blanc);
+            border-top: 1px solid var(--bordure);
+            border-bottom: 1px solid var(--bordure);
         }
 
         h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            letter-spacing: -0.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Carré design avant les titres */
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: var(--brique);
         }
 
         h2::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 4px;
-            background-color: var(--terracotta);
-            margin: 20px auto 0;
-            border-radius: 2px;
+            display: none; /* Suppression de l'ancienne ligne centrée */
         }
 
         /* --- CONFORMITÉ --- */
         .conformite-box {
-            background-color: var(--sable);
+            background-color: var(--blanc);
             padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            position: relative;
+            border: 1px solid var(--bordure);
+            border-left: 4px solid var(--brique);
         }
 
         .conformite-box p:first-child {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 500;
-            margin-top: 0;
-            color: var(--bleu-nuit);
+            margin-bottom: 30px;
         }
 
         .conformite-box ul {
             list-style-type: none;
             padding-left: 0;
-            margin-bottom: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .conformite-box li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 15px;
+            padding-left: 30px;
             font-weight: 400;
+            color: #44403C;
         }
 
         .conformite-box li::before {
-            content: '✦';
+            content: '→';
             position: absolute;
             left: 0;
-            color: var(--terracotta);
-            font-size: 1.2rem;
-            line-height: 1.4;
-        }
-
-        .conformite-box strong {
-            color: var(--bleu-nuit);
+            color: var(--brique);
+            font-weight: 700;
         }
 
         /* --- GRILLE ARGUMENTS --- */
         .grid-arguments {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .card-argument {
-            text-align: center;
             background: var(--blanc);
-            padding: 30px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.02);
+            padding: 30px;
+            border: 1px solid var(--bordure);
+            transition: border-color 0.3s ease;
         }
 
         .card-argument:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border-color: var(--charbon);
         }
 
         .card-argument img {
-            margin-bottom: 20px;
-            border-radius: 10px;
+            margin-bottom: 25px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            width: 100%;
+            filter: grayscale(20%); /* Légèrement désaturé pour l'élégance */
+            transition: filter 0.3s ease;
+        }
+
+        .card-argument:hover img {
+            filter: grayscale(0%);
         }
 
         .card-argument h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 0;
         }
 
-        /* Rendre les images "brutes" de la galerie uniformes */
-        img.card-argument {
-            padding: 0;
-            object-fit: cover;
-            aspect-ratio: 4/3;
-            width: 100%;
+        .card-argument p {
+            font-size: 0.95rem;
+            color: #57534E;
+            margin: 0;
         }
 
         /* --- GRILLE PRINCIPES --- */
         .grid-principes {
             display: flex;
             flex-direction: column;
-            gap: 60px;
+            gap: 40px;
         }
 
         .principe-item img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--bordure);
+        }
+
+        /* --- GALERIE RÉALISATIONS --- */
+        img.card-argument {
+            padding: 0; /* Enlève le padding pour les images pures */
+            height: 100%;
+            aspect-ratio: 1 / 1; /* Format carré façon grille Instagram chic */
         }
 
         /* --- FORMULAIRE & CONTACT --- */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
         }
 
         @media (max-width: 768px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
-            header h1 {
-                font-size: 2.5rem;
-            }
+            header { padding: 60px 0; }
         }
 
         .form-group {
@@ -243,96 +248,97 @@
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--bleu-nuit);
-            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--charbon);
         }
 
         input, textarea {
             width: 100%;
-            padding: 16px;
-            border: 1px solid #E2E8F0;
-            background-color: var(--fond);
-            border-radius: 10px;
-            font-family: 'Outfit', sans-serif;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid var(--charbon);
+            background-color: transparent;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
             box-sizing: border-box;
             transition: border-color 0.3s ease;
         }
 
         input:focus, textarea:focus {
             outline: none;
-            border-color: var(--terracotta);
-            background-color: var(--blanc);
+            border-bottom: 2px solid var(--brique);
         }
 
         button {
-            background-color: var(--terracotta);
+            background-color: var(--charbon);
             color: var(--blanc);
             border: none;
-            padding: 18px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px; /* Forme pilule très moderne */
+            padding: 20px 30px;
+            font-size: 0.95rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             width: 100%;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
         button:hover {
-            background-color: #C04E2D; /* Terracotta un peu plus sombre */
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(217, 93, 57, 0.2);
+            background-color: var(--brique);
         }
 
         .contact-info h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 20px;
         }
 
         .contact-info p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 15px;
+            color: #57534E;
         }
         
-        .contact-info strong {
-            color: var(--bleu-nuit);
-        }
-
         .contact-info a {
-            color: var(--terracotta);
+            color: var(--charbon);
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
+            font-weight: 600;
+            border-bottom: 1px solid var(--brique);
+            padding-bottom: 2px;
+            transition: color 0.3s ease;
         }
 
         .contact-info a:hover {
-            color: var(--bleu-nuit);
+            color: var(--brique);
         }
 
         .encart-zone {
             margin-top: 40px;
-            padding: 25px;
-            background: var(--sable);
-            border-radius: 12px;
-            border-left: 4px solid var(--terracotta);
+            padding: 30px;
+            border: 1px solid var(--bordure);
+            background-color: var(--blanc);
         }
 
         footer {
-            background-color: var(--bleu-nuit);
-            color: #94A3B8;
+            background-color: var(--charbon);
+            color: var(--pierre);
             text-align: center;
-            padding: 30px 20px;
-            font-size: 0.95rem;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
+        <div class="container" style="padding: 0;">
             <span class="badge-paris">Intervention exclusivement à Paris</span>
             <h1>Artisan Concepteur de Terrasses Estivales</h1>
             <p class="subtitle">Savoir-faire, bois français et conformité Mairie garantie pour bars et restaurants.</p>
@@ -353,11 +359,11 @@
                 <div class="conformite-box">
                     <p>Nous garantissons la conformité totale de votre installation avec le cahier des charges strict de la Mairie de Paris :</p>
                     <ul>
-                        <li>Cheminements piétons et accès PMR maintenus (1m60 minimum de passage)</li>
+                        <li>Cheminements piétons et accès PMR maintenus (1m60 min.)</li>
                         <li>Éléments non-fixés au sol (respect de la voirie)</li>
-                        <li><strong>Zéro bois de palette</strong> (matériaux nobles uniquement)</li>
-                        <li>Platelage en bois exclusivement, parfaitement aligné à la hauteur du trottoir</li>
-                        <li>Barrières de protections latérales de 1m30 de hauteur maximum, ajourées pour préserver la visibilité urbaine</li>
+                        <li><strong>Zéro bois de palette</strong> (matériaux nobles)</li>
+                        <li>Platelage bois aligné à la hauteur du trottoir</li>
+                        <li>Barrières latérales ajourées (1m30 max.)</li>
                     </ul>
                 </div>
             </div>
@@ -411,7 +417,7 @@
 
         <section class="container">
             <h2>Nos Dernières Réalisations à Paris</h2>
-            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
+            <p style="margin-bottom: 40px; color: #57534E;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
             <div class="grid-arguments">
                  <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-argument">
                 <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-argument">
@@ -444,7 +450,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="message">Votre projet (Dimensions, arrondissement...) *</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
+                                <textarea id="message" name="message" rows="3" required></textarea>
                             </div>
                             <button type="submit">Envoyer ma demande</button>
                         </form>
@@ -454,12 +460,12 @@
                         <h3>Contactez-nous directement</h3>
                         <p>Nous sommes à votre disposition pour étudier votre projet et vous garantir une ouverture sereine pour la saison estivale.</p>
                         
-                        <p><strong>Email :</strong> <a href="mailto:contact@extension-terrasse.fr">contact@extension-terrasse.fr</a></p>
+                        <p><strong>Email :</strong> <br><a href="mailto:contact@extension-terrasse.fr">contact@extension-terrasse.fr</a></p>
                         
-                        <p><strong>Instagram :</strong> <a href="https://instagram.com/TerrasseParis" target="_blank">@TerrasseParis</a></p>
+                        <p><strong>Instagram :</strong> <br><a href="https://instagram.com/TerrasseParis" target="_blank">@TerrasseParis</a></p>
                         
                         <div class="encart-zone">
-                            <p style="margin:0; font-size: 0.95rem;">📍 <strong>Zone d'intervention :</strong><br> Nous opérons <em>exclusivement sur Paris intra-muros</em> afin de garantir notre réactivité et notre maîtrise parfaite des exigences des mairies d'arrondissement.</p>
+                            <p style="margin:0;">📍 <strong>ZONE D'INTERVENTION</strong><br><br> Nous opérons <em>exclusivement sur Paris intra-muros</em> afin de garantir notre réactivité et notre maîtrise parfaite des exigences des mairies d'arrondissement.</p>
                         </div>
                     </div>
                 </div>
@@ -469,7 +475,7 @@
 
     <footer>
         <div class="container" style="padding: 10px 0;">
-            <p>&copy; 2026 Extension Terrasse Paris. Tous droits réservés. | Artisan spécialisé dans l'aménagement extérieur.</p>
+            <p>&copy; 2026 Extension Terrasse Paris. Tous droits réservés. | Artisan Spécialisé</p>
         </div>
     </footer>
 
