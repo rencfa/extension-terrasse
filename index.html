@@ -6,82 +6,103 @@
     <meta name="description" content="Artisan spécialisé dans la pose de terrasses estivales en bois pour bars et restaurants à Paris. Conformité totale avec la Mairie de Paris. Installation rapide.">
     <title>Pose de Terrasses Estivales à Paris | Artisan Menuisier & Conformité Garantie</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIABLES DE COULEURS --- */
+        /* --- VARIABLES DE COULEURS (Nouveau look Néo-Bistrot) --- */
         :root {
-            --bois-fonce: #5C4033; /* Marron écorce */
-            --bois-clair: #D2B48C; /* Beige bois naturel */
-            --vert-paris: #2E473D; /* Vert très sombre, rappel du mobilier parisien */
-            --texte: #333333;
-            --fond: #FAF9F6; /* Blanc cassé / Lin */
+            --bleu-nuit: #0F172A; /* Bleu très sombre, chic parisien */
+            --terracotta: #D95D39; /* Accent dynamique, rappel chaud du bois */
+            --sable: #F3EFEA; /* Beige très clair et chaud */
+            --texte: #334155; /* Gris ardoise pour une lecture douce */
+            --fond: #FAFAFA; /* Blanc très légèrement cassé */
             --blanc: #FFFFFF;
         }
 
         /* --- STYLES DE BASE --- */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
             color: var(--texte);
             background-color: var(--fond);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3 {
-            font-family: 'Lora', serif;
-            color: var(--vert-paris);
+            font-family: 'Playfair Display', serif;
+            color: var(--bleu-nuit);
+            margin-top: 0;
         }
 
         img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            padding: 40px 0;
+            padding: 60px 0;
         }
 
         /* --- HEADER & HERO --- */
         header {
-            background-color: var(--vert-paris);
+            background-color: var(--bleu-nuit);
             color: var(--fond);
             text-align: center;
-            padding: 80px 20px;
-            border-bottom: 8px solid var(--bois-clair);
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--terracotta);
         }
 
         header h1 {
             color: var(--blanc);
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
         }
 
         header p.subtitle {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: #CBD5E1;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .badge-paris {
             display: inline-block;
-            background-color: var(--bois-clair);
-            color: var(--vert-paris);
-            padding: 8px 16px;
+            background-color: var(--terracotta);
+            color: var(--blanc);
+            padding: 8px 20px;
             font-weight: 600;
-            border-radius: 20px;
+            border-radius: 30px;
             text-transform: uppercase;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
         /* --- SECTIONS GÉNÉRALES --- */
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .bg-blanc {
@@ -89,136 +110,186 @@
         }
 
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             position: relative;
         }
 
         h2::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--bois-clair);
-            margin: 15px auto 0;
+            width: 40px;
+            height: 4px;
+            background-color: var(--terracotta);
+            margin: 20px auto 0;
+            border-radius: 2px;
         }
 
         /* --- CONFORMITÉ --- */
         .conformite-box {
-            background-color: var(--fond);
-            border-left: 5px solid var(--bois-fonce);
-            padding: 30px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background-color: var(--sable);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .conformite-box p:first-child {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-top: 0;
+            color: var(--bleu-nuit);
         }
 
         .conformite-box ul {
             list-style-type: none;
             padding-left: 0;
+            margin-bottom: 0;
         }
 
         .conformite-box li {
             position: relative;
-            padding-left: 30px;
+            padding-left: 35px;
             margin-bottom: 15px;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .conformite-box li::before {
-            content: '✓';
+            content: '✦';
             position: absolute;
             left: 0;
-            color: var(--bois-fonce);
-            font-weight: bold;
+            color: var(--terracotta);
             font-size: 1.2rem;
+            line-height: 1.4;
         }
 
-        /* --- GRILLE ARGUMENTS (4 visuels) --- */
+        .conformite-box strong {
+            color: var(--bleu-nuit);
+        }
+
+        /* --- GRILLE ARGUMENTS --- */
         .grid-arguments {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
         .card-argument {
             text-align: center;
             background: var(--blanc);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .card-argument:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card-argument img {
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
 
         .card-argument h3 {
-            font-size: 1.3rem;
-            color: var(--bois-fonce);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
         }
 
-        /* --- GRILLE PRINCIPES (1280x640) --- */
+        /* Rendre les images "brutes" de la galerie uniformes */
+        img.card-argument {
+            padding: 0;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            width: 100%;
+        }
+
+        /* --- GRILLE PRINCIPES --- */
         .grid-principes {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 60px;
         }
 
         .principe-item img {
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
         }
 
         /* --- FORMULAIRE & CONTACT --- */
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 60px;
         }
 
         @media (max-width: 768px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
             }
+            header h1 {
+                font-size: 2.5rem;
+            }
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 600;
+            font-weight: 500;
+            color: var(--bleu-nuit);
+            font-size: 0.95rem;
         }
 
         input, textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+            padding: 16px;
+            border: 1px solid #E2E8F0;
+            background-color: var(--fond);
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
             box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            background-color: var(--blanc);
         }
 
         button {
-            background-color: var(--bois-fonce);
+            background-color: var(--terracotta);
             color: var(--blanc);
             border: none;
-            padding: 15px 30px;
+            padding: 18px 30px;
             font-size: 1.1rem;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 50px; /* Forme pilule très moderne */
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         button:hover {
-            background-color: var(--vert-paris);
+            background-color: #C04E2D; /* Terracotta un peu plus sombre */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(217, 93, 57, 0.2);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
         }
 
         .contact-info p {
@@ -227,15 +298,34 @@
         }
         
         .contact-info strong {
-            color: var(--bois-fonce);
+            color: var(--bleu-nuit);
+        }
+
+        .contact-info a {
+            color: var(--terracotta);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--bleu-nuit);
+        }
+
+        .encart-zone {
+            margin-top: 40px;
+            padding: 25px;
+            background: var(--sable);
+            border-radius: 12px;
+            border-left: 4px solid var(--terracotta);
         }
 
         footer {
-            background-color: var(--vert-paris);
-            color: white;
+            background-color: var(--bleu-nuit);
+            color: #94A3B8;
             text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
+            padding: 30px 20px;
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -321,7 +411,7 @@
 
         <section class="container">
             <h2>Nos Dernières Réalisations à Paris</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
             <div class="grid-arguments">
                  <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-argument">
                 <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-argument">
@@ -364,12 +454,12 @@
                         <h3>Contactez-nous directement</h3>
                         <p>Nous sommes à votre disposition pour étudier votre projet et vous garantir une ouverture sereine pour la saison estivale.</p>
                         
-                        <p><strong>Email :</strong> <a href="mailto:contact@extension-terrasse.fr" style="color: inherit;">contact@extension-terrasse.fr</a></p>
+                        <p><strong>Email :</strong> <a href="mailto:contact@extension-terrasse.fr">contact@extension-terrasse.fr</a></p>
                         
-                        <p><strong>Instagram :</strong> <a href="https://instagram.com/TerrasseParis" target="_blank" style="color: inherit;">@TerrasseParis</a></p>
+                        <p><strong>Instagram :</strong> <a href="https://instagram.com/TerrasseParis" target="_blank">@TerrasseParis</a></p>
                         
-                        <div style="margin-top: 30px; padding: 20px; background: var(--fond); border-radius: 8px; border: 1px solid #e0e0e0;">
-                            <p style="margin:0;">📍 <strong>Zone d'intervention :</strong><br> Nous opérons <em>exclusivement sur Paris intra-muros</em> afin de garantir notre réactivité et notre maîtrise parfaite des exigences des mairies d'arrondissement.</p>
+                        <div class="encart-zone">
+                            <p style="margin:0; font-size: 0.95rem;">📍 <strong>Zone d'intervention :</strong><br> Nous opérons <em>exclusivement sur Paris intra-muros</em> afin de garantir notre réactivité et notre maîtrise parfaite des exigences des mairies d'arrondissement.</p>
                         </div>
                     </div>
                 </div>
