@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Artisan spécialisé dans la pose de terrasses estivales en bois pour bars et restaurants à Paris. Conformité totale avec la Mairie de Paris. Installation rapide.">
+    <title>Pose de Terrasses Estivales à Paris | Artisan Menuisier & Conformité Garantie</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIABLES DE COULEURS --- */
+        :root {
+            --bois-fonce: #5C4033; /* Marron écorce */
+            --bois-clair: #D2B48C; /* Beige bois naturel */
+            --vert-paris: #2E473D; /* Vert très sombre, rappel du mobilier parisien */
+            --texte: #333333;
+            --fond: #FAF9F6; /* Blanc cassé / Lin */
+            --blanc: #FFFFFF;
+        }
+
+        /* --- STYLES DE BASE --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--texte);
+            background-color: var(--fond);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: var(--vert-paris);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        /* --- HEADER & HERO --- */
+        header {
+            background-color: var(--vert-paris);
+            color: var(--fond);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 8px solid var(--bois-clair);
+        }
+
+        header h1 {
+            color: var(--blanc);
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p.subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .badge-paris {
+            display: inline-block;
+            background-color: var(--bois-clair);
+            color: var(--vert-paris);
+            padding: 8px 16px;
+            font-weight: 600;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        section {
+            padding: 60px 20px;
+        }
+
+        .bg-blanc {
+            background-color: var(--blanc);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--bois-clair);
+            margin: 15px auto 0;
+        }
+
+        /* --- CONFORMITÉ --- */
+        .conformite-box {
+            background-color: var(--fond);
+            border-left: 5px solid var(--bois-fonce);
+            padding: 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .conformite-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .conformite-box li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .conformite-box li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--bois-fonce);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* --- GRILLE ARGUMENTS (4 visuels) --- */
+        .grid-arguments {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card-argument {
+            text-align: center;
+            background: var(--blanc);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card-argument:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-argument h3 {
+            font-size: 1.3rem;
+            color: var(--bois-fonce);
+        }
+
+        /* --- GRILLE PRINCIPES (1280x640) --- */
+        .grid-principes {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .principe-item img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- FORMULAIRE & CONTACT --- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: var(--bois-fonce);
+            color: var(--blanc);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--vert-paris);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info strong {
+            color: var(--bois-fonce);
+        }
+
+        footer {
+            background-color: var(--vert-paris);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <span class="badge-paris">Intervention exclusivement à Paris</span>
+            <h1>Artisan Concepteur de Terrasses Estivales</h1>
+            <p class="subtitle">Savoir-faire, bois français et conformité Mairie garantie pour bars et restaurants.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <h2>Saison 2026 : Préparez votre terrasse</h2>
+            <p>À Paris, les terrasses de bars et restaurants peuvent être réinstallées à partir du <strong>01/04/2026 et jusqu’à la fin du mois d’octobre</strong> : une excellente nouvelle pour l'activité de votre établissement.</p>
+            <p>Cependant, ces installations se font selon un règlement renforcé, et supposent une autorisation préalable de la mairie d’arrondissement. Le non-respect du règlement peut être sanctionné par de lourdes peines d’amendes et le retrait pur et simple de vos autorisations.</p>
+            <p><em>Depuis 2020, nous installons des terrasses esthétiques, durables, sur-mesure et en totale conformité avec la réglementation de la Mairie de Paris.</em></p>
+        </section>
+
+        <section class="bg-blanc">
+            <div class="container">
+                <h2>Notre Garantie Conformité</h2>
+                <div class="conformite-box">
+                    <p>Nous garantissons la conformité totale de votre installation avec le cahier des charges strict de la Mairie de Paris :</p>
+                    <ul>
+                        <li>Cheminements piétons et accès PMR maintenus (1m60 minimum de passage)</li>
+                        <li>Éléments non-fixés au sol (respect de la voirie)</li>
+                        <li><strong>Zéro bois de palette</strong> (matériaux nobles uniquement)</li>
+                        <li>Platelage en bois exclusivement, parfaitement aligné à la hauteur du trottoir</li>
+                        <li>Barrières de protections latérales de 1m30 de hauteur maximum, ajourées pour préserver la visibilité urbaine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Pourquoi choisir notre savoir-faire ?</h2>
+            <div class="grid-arguments">
+                <article class="card-argument">
+                    <img src="arg1.jpg" alt="Terrasse estivale montée en une demi-journée à Paris">
+                    <h3>Pose en une demi-journée</h3>
+                    <p>Ne perdez pas un seul service. Notre équipe intervient rapidement et proprement pour un montage express sans perturber votre activité.</p>
+                </article>
+                
+                <article class="card-argument">
+                    <img src="arg2.jpg" alt="Lames de terrasse en pin traité autoclave français">
+                    <h3>Pin traité autoclave</h3>
+                    <p>Lambourdes et lames de terrasse sélectionnées pour une longévité maximale face aux intempéries et au passage intensif.</p>
+                </article>
+
+                <article class="card-argument">
+                    <img src="arg3.jpg" alt="Mise à niveau de la terrasse alignée au trottoir">
+                    <h3>Mise à niveau parfaite</h3>
+                    <p>Une terrasse à hauteur du trottoir, parfaitement plane, assurant la sécurité de votre clientèle et de votre personnel (service en salle).</p>
+                </article>
+
+                <article class="card-argument">
+                    <img src="arg4.jpg" alt="Mobilier sur-mesure en bois pour terrasse de restaurant">
+                    <h3>Mobilier sur-mesure</h3>
+                    <p>Bacs pour plantes, bancs intégrés, garde-corps... Nous personnalisons votre espace pour le rendre unique et accueillant.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="bg-blanc">
+            <div class="container">
+                <h2>Nos Principes de Construction</h2>
+                <div class="grid-principes">
+                    <div class="principe-item">
+                        <img src="principe1.jpg" alt="Structure et lambourdes de la terrasse bois" width="1280" height="640">
+                    </div>
+                    <div class="principe-item">
+                        <img src="principe2.jpg" alt="Fixation et platelage de la terrasse" width="1280" height="640">
+                    </div>
+                    <div class="principe-item">
+                        <img src="principe3.jpg" alt="Finitions et ajout du mobilier sur-mesure" width="1280" height="640">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Nos Dernières Réalisations à Paris</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
+            <div class="grid-arguments">
+                 <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-argument">
+                <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-argument">
+                <img src="realisation3.jpg" alt="Aménagement estival Paris" class="card-argument">
+                <img src="realisation4.jpg" alt="Garde corps et bacs à plantes en bois" class="card-argument">
+                <img src="realisation5.jpg" alt="Terrasse de bar à Paris" class="card-argument">
+                <img src="realisation6.jpg" alt="Terrasse de restaurant bois" class="card-argument">
+                <img src="realisation7.jpg" alt="Aménagement estival Paris" class="card-argument">
+                <img src="realisation8.jpg" alt="Garde corps et bacs à plantes en bois" class="card-argument">
+            </div>
+        </section>
+
+        <section class="bg-blanc" id="contact">
+            <div class="container">
+                <h2>Demander un devis</h2>
+                <div class="contact-wrapper">
+                    <div>
+                        <form action="#" method="POST">
+                            <div class="form-group">
+                                <label for="nom">Nom / Établissement *</label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Adresse E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Votre projet (Dimensions, arrondissement...) *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit">Envoyer ma demande</button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3>Contactez-nous directement</h3>
+                        <p>Nous sommes à votre disposition pour étudier votre projet et vous garantir une ouverture sereine pour la saison estivale.</p>
+                        
+                        <p><strong>Email :</strong> <a href="mailto:contact@extension-terrasse.fr" style="color: inherit;">contact@extension-terrasse.fr</a></p>
+                        
+                        <p><strong>Instagram :</strong> <a href="https://instagram.com/TerrasseParis" target="_blank" style="color: inherit;">@TerrasseParis</a></p>
+                        
+                        <div style="margin-top: 30px; padding: 20px; background: var(--fond); border-radius: 8px; border: 1px solid #e0e0e0;">
+                            <p style="margin:0;">📍 <strong>Zone d'intervention :</strong><br> Nous opérons <em>exclusivement sur Paris intra-muros</em> afin de garantir notre réactivité et notre maîtrise parfaite des exigences des mairies d'arrondissement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container" style="padding: 10px 0;">
+            <p>&copy; 2026 Extension Terrasse Paris. Tous droits réservés. | Artisan spécialisé dans l'aménagement extérieur.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
