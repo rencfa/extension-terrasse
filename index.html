@@ -14,7 +14,8 @@
         /* --- RESET TOTAL POUR MOBILE --- */
         html {
             box-sizing: border-box;
-            overflow-x: hidden; /* Empêche le débordement horizontal à la racine */
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* OPTIMISATION : Défilement fluide vers le formulaire */
         }
         *, *::before, *::after {
             box-sizing: inherit;
@@ -46,7 +47,7 @@
             color: var(--charbon);
             margin-top: 0;
             text-transform: uppercase;
-            overflow-wrap: break-word; /* Force les mots longs à passer à la ligne */
+            overflow-wrap: break-word; 
             word-wrap: break-word;
         }
 
@@ -54,6 +55,12 @@
             max-width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* OPTIMISATION : Accessibilité clavier */
+        a:focus, button:focus {
+            outline: 3px solid var(--bleu);
+            outline-offset: 2px;
         }
 
         /* Gestion centralisée et sécurisée des conteneurs */
@@ -77,7 +84,7 @@
         }
 
         header h1 {
-            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-size: clamp(1.8rem, 4vw, 3.2rem); /* MODIFICATION : Titre réduit */
             line-height: 1.1;
             margin-bottom: 24px;
             letter-spacing: -1px;
@@ -87,9 +94,36 @@
         header p.subtitle {
             font-size: 1.25rem;
             font-weight: 400;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             max-width: 700px;
             color: #57534E;
+        }
+
+        /* NOUVEAUTÉ : Image d'en-tête et CTA */
+        .header-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border: 1px solid var(--bordure);
+            margin-bottom: 40px;
+        }
+
+        .cta-header {
+            display: inline-block;
+            background-color: var(--charbon);
+            color: var(--blanc);
+            padding: 18px 35px;
+            font-size: 1rem;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            background-color: var(--bleu);
         }
 
         .badge-paris {
@@ -340,6 +374,12 @@
             letter-spacing: 1px;
         }
 
+        /* OPTIMISATION : Footer margin */
+        footer p {
+            margin: 0;
+            line-height: 1.4;
+        }
+
         /* =========================================
            RÈGLES SPÉCIFIQUES POUR MOBILE & TABLETTE 
            ========================================= */
@@ -357,7 +397,7 @@
             }
 
             header h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem; /* Ajustement mobile après réduction globale */
             }
 
             h2 {
@@ -394,9 +434,11 @@
 
     <header>
         <div class="container">
-            <span class="badge-paris">Intervention exclusivement à Paris</span>
             <h1>Artisan Français pour Terrasses Estivales</h1>
             <p class="subtitle">Savoir-faire, bois français et conformité Mairie garantie pour bars et restaurants.</p>
+            
+            <img src="header1.jpg" alt="Installation de terrasse estivale en bois" class="header-image">
+            <a href="#contact" class="cta-header">Demander un devis gratuit</a>
         </div>
     </header>
 
@@ -431,25 +473,25 @@
                 <h2>Pourquoi choisir notre savoir-faire ?</h2>
                 <div class="grid-arguments">
                     <article class="card-argument">
-                        <img src="arg1.jpg" alt="Terrasse estivale montée en une demi-journée à Paris">
+                        <img src="arg1.jpg" alt="Terrasse estivale montée en une demi-journée à Paris" loading="lazy">
                         <h3>Pose en une demi-journée</h3>
                         <p>Ne perdez pas un seul service. Notre équipe intervient rapidement et proprement pour un montage express sans perturber votre activité.</p>
                     </article>
                     
                     <article class="card-argument">
-                        <img src="arg2.jpg" alt="Lames de terrasse en pin traité autoclave français">
+                        <img src="arg2.jpg" alt="Lames de terrasse en pin traité autoclave français" loading="lazy">
                         <h3>Pin traité autoclave</h3>
                         <p>Lambourdes et lames de terrasse sélectionnées pour une longévité maximale face aux intempéries et au passage intensif.</p>
                     </article>
 
                     <article class="card-argument">
-                        <img src="arg3.jpg" alt="Mise à niveau de la terrasse alignée au trottoir">
+                        <img src="arg3.jpg" alt="Mise à niveau de la terrasse alignée au trottoir" loading="lazy">
                         <h3>Mise à niveau parfaite</h3>
                         <p>Une terrasse à hauteur du trottoir, parfaitement plane, assurant la sécurité de votre clientèle et de votre personnel (service en salle).</p>
                     </article>
 
                     <article class="card-argument">
-                        <img src="arg4.jpg" alt="Mobilier sur-mesure en bois pour terrasse de restaurant">
+                        <img src="arg4.jpg" alt="Mobilier sur-mesure en bois pour terrasse de restaurant" loading="lazy">
                         <h3>Mobilier sur-mesure</h3>
                         <p>Bacs pour plantes, bancs intégrés, garde-corps... Nous personnalisons votre espace pour le rendre unique et accueillant.</p>
                     </article>
@@ -462,13 +504,13 @@
                 <h2>Nos Principes de Construction</h2>
                 <div class="grid-principes">
                     <div class="principe-item">
-                        <img src="principe1.jpg" alt="Structure et lambourdes de la terrasse bois" width="1280" height="640">
+                        <img src="principe1.jpg" alt="Structure et lambourdes de la terrasse bois" width="1280" height="640" loading="lazy">
                     </div>
                     <div class="principe-item">
-                        <img src="principe2.jpg" alt="Fixation et platelage de la terrasse" width="1280" height="640">
+                        <img src="principe2.jpg" alt="Fixation et platelage de la terrasse" width="1280" height="640" loading="lazy">
                     </div>
                     <div class="principe-item">
-                        <img src="principe3.jpg" alt="Finitions et ajout du mobilier sur-mesure" width="1280" height="640">
+                        <img src="principe3.jpg" alt="Finitions et ajout du mobilier sur-mesure" width="1280" height="640" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -479,14 +521,21 @@
                 <h2>Nos Dernières Réalisations à Paris</h2>
                 <p style="margin-bottom: 40px; color: #57534E;">Découvrez quelques-unes de nos installations récentes pour les bars et brasseries parisiennes.</p>
                 <div class="galerie-photos">
-                     <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-photo">
-                    <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-photo">
-                    <img src="realisation3.jpg" alt="Aménagement estival Paris" class="card-photo">
-                    <img src="realisation4.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
-                    <img src="realisation5.jpg" alt="Terrasse de bar à Paris" class="card-photo">
-                    <img src="realisation6.jpg" alt="Terrasse de restaurant bois" class="card-photo">
-                    <img src="realisation7.jpg" alt="Aménagement estival Paris" class="card-photo">
-                    <img src="realisation8.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo">
+                    <img src="realisation1.jpg" alt="Terrasse de bar à Paris" class="card-photo" loading="lazy">
+                    <img src="realisation2.jpg" alt="Terrasse de restaurant bois" class="card-photo" loading="lazy">
+                    <img src="realisation3.jpg" alt="Aménagement estival Paris" class="card-photo" loading="lazy">
+                    <img src="realisation4.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo" loading="lazy">
+                    <img src="realisation5.jpg" alt="Terrasse de bar à Paris" class="card-photo" loading="lazy">
+                    <img src="realisation6.jpg" alt="Terrasse de restaurant bois" class="card-photo" loading="lazy">
+                    <img src="realisation7.jpg" alt="Aménagement estival Paris" class="card-photo" loading="lazy">
+                    <img src="realisation8.jpg" alt="Garde corps et bacs à plantes en bois" class="card-photo" loading="lazy">
+                    <img src="realisation9.jpg" alt="Nouvelle terrasse estivale" class="card-photo" loading="lazy">
+                    <img src="realisation10.jpg" alt="Devanture de café aménagée" class="card-photo" loading="lazy">
+                    <img src="realisation11.jpg" alt="Installation de plancher bois" class="card-photo" loading="lazy">
+                    <img src="realisation12.jpg" alt="Délimitation de terrasse restaurant" class="card-photo" loading="lazy">
+                    <img src="realisation13.jpg" alt="Finition bois de la terrasse" class="card-photo" loading="lazy">
+                    <img src="realisation14.jpg" alt="Mobilier sur-mesure estival" class="card-photo" loading="lazy">
+                    <img src="realisation15.jpg" alt="Terrasse complète de brasserie" class="card-photo" loading="lazy">
                 </div>
             </div>
         </section>
@@ -535,7 +584,7 @@
     </main>
 
     <footer>
-        <div class="container" style="padding: 10px 0;">
+        <div class="container">
             <p>&copy; 2026 Extension Terrasse Paris. Tous droits réservés. | Artisan Spécialisé</p>
         </div>
     </footer>
